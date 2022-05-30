@@ -35,7 +35,7 @@ public class Converter{
       String[] unitChoose = {"bit (비트)","byte (바이트)","kb (킬로바이트)","mb (메가바이트)","gb (기가바이트)","tb (테라바이트)","pb (페타바이트)","eb (엑사바이트)"};
       panel.setLayout(null);
       
-      //          
+      // 단위 선택        
       JComboBox dropdown1 = new JComboBox(unitChoose);
       dropdown1.setBounds(297, 58, 132, 30);
       dropdown1.setModel(new DefaultComboBoxModel(new String[] {"bit (비트)", "byte (바이트)", "kb (킬로바이트)", "mb (메가바이트)", "gb (기가바이트)", "tb (테라바이트)", "pb (페타바이트)", "eb (엑사바이트)"}));
@@ -46,13 +46,13 @@ public class Converter{
       dropdown2.setModel(new DefaultComboBoxModel(new String[] {"bit (비트)", "byte (바이트)", "kb (킬로바이트)", "mb (메가바이트)", "gb (기가바이트)", "tb (테라바이트)", "pb (페타바이트)", "eb (엑사바이트)"}));
       panel.add(dropdown2);
       
-      //        ȯ ϰ           Է 
+      // 단위 변환하고 싶은 값 입력
       toBitText = new JTextField("0");
       toBitText.setBounds(101, 59, 184, 29);
       panel.add(toBitText);
       toBitText.setColumns(10);
       
-      //        ȯ       
+      // 단위 변환 후 출력    
       fromBitText = new JTextField("0");
       fromBitText.setBounds(101, 109, 184, 28);
       fromBitText.setEditable(false);
@@ -60,25 +60,25 @@ public class Converter{
       
       
    
-      //   ȯ   ư
+      // 변환 버튼
       JButton convertBtn = new JButton("\uBCC0\uD658");
       convertBtn.setBounds(101, 177, 328, 30);
       convertBtn.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             
-            //                 
+        	// 현재 단위 가져옴               
             String fromUnit = (String) dropdown1.getItemAt(dropdown1.getSelectedIndex());
-            //   ȯ    ϴ             
+            // 변환 원하는 단위 가져옴           
             String toUnit = (String) dropdown2.getItemAt(dropdown2.getSelectedIndex());
-            // factor     
+            // factor 설정 
             LengthConverter from = new LengthConverter(fromUnit);
             LengthConverter to = new LengthConverter(toUnit);
             
-            //  Է     double             
+            // 입력 값 double형으로 가져옴          
             double val = Double.parseDouble(toBitText.getText());
-            //  Է       bit      
+            // 입력 값을 bit단위로     
             double bit = from.toBit(val);
-            // bit         ȯ           ϴ        
+            // bit단위로 변환된 것을 원하는 단위로       
             String converted = Double.toString(to.fromBit(bit));
             fromBitText.setText(converted);
          }

@@ -47,14 +47,14 @@ public class Calculator implements ActionListener {
    StringBuilder sb = new StringBuilder();
 
    ArrayList<String> postfix = new ArrayList<>();
-   Stack<String> opStack = new Stack<>(); // 연산자
+   Stack<String> opStack = new Stack<>(); //       
    Stack<Float> numStack = new Stack<>();
 
-   float result = 0; // 중간값의 연산을 위해 calculate()함수에서 사용
+   float result = 0; //  煞                  calculate() 獨         
 
    public Calculator() {
 
-//      super("계산기");
+//      super("    ");
       gui = new JPanel(new BorderLayout(5, 5));
 
       gui.setBorder(new EmptyBorder(4, 4, 4, 4));
@@ -208,7 +208,6 @@ public class Calculator implements ActionListener {
 
    }
 
-   // 이벤트 리스너 메소드
    public void actionPerformed(ActionEvent e) {
 
       if (e.getSource().equals(oneButton)) {
@@ -345,7 +344,7 @@ public class Calculator implements ActionListener {
 
          if (postfix.get(i) == "+") {
 
-            System.out.println(numStack.size() + "사이즈" + numStack.peek());
+            System.out.println(numStack.size() + "      " + numStack.peek());
             num2 = numStack.pop();
             num1 = numStack.pop();
 

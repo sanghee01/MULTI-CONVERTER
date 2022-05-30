@@ -38,11 +38,11 @@ public class LengthConverter {
          factor = EBYTE_TO_BIT;
       }
    }
-   //   Ʈ          ȯ
+   // 비트 단위로 변환
    public double toBit(double measurement) {
       return (measurement * factor);
    }
-   //   Ʈ             ϴ           ȯ
+   // 비트 단위에서 원하는 단위로 변환
    public double fromBit(double measurement) {
       return (measurement / factor);
    }

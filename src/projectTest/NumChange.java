@@ -55,17 +55,17 @@ public class NumChange extends JFrame implements ActionListener{
  
       
    }
-   public void actionPerformed(ActionEvent e) {//  ưŬ      ߵ  Ǵ   ޼ҵ 
+   public void actionPerformed(ActionEvent e) {//버튼클릭시 발동되는 메소드
       String s1=null, s2=null;
       if(e.getSource()==combo1) {
          s1=combo1.getSelectedItem().toString();
-         //getSelectedItem() :   õ    ü       
-         //toString :   ü          ִ                   ڿ        
+         //getSelectedItem() :선택된 객체의 내용
+         //toString : 객체가 가지고있는 정보나 값들을 문자열로 리턴
          try {
             switch(s1) {
                case "DEC":
                   n=Integer.parseInt(src.getText());
-                  // Է¹           getText()    ޾Ƽ  String    ·   ٲپ  (src         ִ´ .)
+                  //입력받은 정수를 getText()로 받아서 String 형태로 바꾸어 (src 변수에 넣는다.)
                   break;
                case "BIN":
                   n=Integer.parseInt(src.getText(),2);
