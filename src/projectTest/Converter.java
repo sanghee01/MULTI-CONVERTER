@@ -32,18 +32,18 @@ public class Converter{
       panel = new JPanel();
       panel.setBorder(new EmptyBorder(5, 5, 5, 5));
       
-      String[] unitChoose = {"bit","byte","kb","mb","gb","tb","pb","eb"};
+      String[] unitChoose = {"bit (비트)","byte (바이트)","kb (킬로바이트)","mb (메가바이트)","gb (기가바이트)","tb (테라바이트)","pb (페타바이트)","eb (엑사바이트)"};
       panel.setLayout(null);
       
       //          
       JComboBox dropdown1 = new JComboBox(unitChoose);
-      dropdown1.setModel(new DefaultComboBoxModel(new String[] {"bit (비트)", "byte (바이트)", "kb (킬로바이트)", "mb (메가바이트)", "gb (기가바이트)", "tb (테라바이트)", "pb (페타바이트)", "eb (엑사바이트)"}));
       dropdown1.setBounds(297, 58, 132, 30);
+      dropdown1.setModel(new DefaultComboBoxModel(new String[] {"bit (비트)", "byte (바이트)", "kb (킬로바이트)", "mb (메가바이트)", "gb (기가바이트)", "tb (테라바이트)", "pb (페타바이트)", "eb (엑사바이트)"}));
       panel.add(dropdown1);
       
       JComboBox dropdown2 = new JComboBox(unitChoose);
-      dropdown2.setModel(new DefaultComboBoxModel(new String[] {"bit (비트)", "byte (바이트)", "kb (킬로바이트)", "mb (메가바이트)", "gb (기가바이트)", "tb (테라바이트)", "pb (페타바이트)", "eb (엑사바이트)"}));
       dropdown2.setBounds(297, 107, 132, 30);
+      dropdown2.setModel(new DefaultComboBoxModel(new String[] {"bit (비트)", "byte (바이트)", "kb (킬로바이트)", "mb (메가바이트)", "gb (기가바이트)", "tb (테라바이트)", "pb (페타바이트)", "eb (엑사바이트)"}));
       panel.add(dropdown2);
       
       //        ȯ ϰ           Է 

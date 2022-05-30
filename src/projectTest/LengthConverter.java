@@ -1,51 +1,51 @@
 package projectTest;
 
 public class LengthConverter {
-	final private double BIT_TO_BIT = 1;
-	final private double BYTE_TO_BIT = 8;
-	final private double KBYTE_TO_BIT = 8192;
-	final private double MBYTE_TO_BIT = 8388608;
-	final private double GBYTE_TO_BIT = 8.5899e+9;
-	final private double TBYTE_TO_BIT = 8.7961e+12;
-	final private double PBYTE_TO_BIT = 9.0072e+15;
-	final private double EBYTE_TO_BIT = 9.2234e+18;
+   final private double BIT_TO_BIT = 1;
+   final private double BYTE_TO_BIT = 8;
+   final private double KBYTE_TO_BIT = 8192;
+   final private double MBYTE_TO_BIT = 8388608;
+   final private double GBYTE_TO_BIT = 8.5899e+9;
+   final private double TBYTE_TO_BIT = 8.7961e+12;
+   final private double PBYTE_TO_BIT = 9.0072e+15;
+   final private double EBYTE_TO_BIT = 9.2234e+18;
 
-	private double factor;
-	
-	public LengthConverter(String unit) {
-		if(unit.equals("bit")) {
-			factor = BIT_TO_BIT;
-		}
-		else if(unit.equals("byte")) {
-			factor = BYTE_TO_BIT;
-		}
-		else if(unit.equals("kb")) {
-			factor = KBYTE_TO_BIT;
-		}
-		else if(unit.equals("mb")) {
-			factor = MBYTE_TO_BIT;
-		}
-		else if(unit.equals("gb")) {
-			factor = GBYTE_TO_BIT;
-		}
-		else if(unit.equals("tb")) {
-			factor = TBYTE_TO_BIT;
-		}
-		else if(unit.equals("pb")) {
-			factor = PBYTE_TO_BIT;
-		}
-		else if(unit.equals("eb")) {
-			factor = EBYTE_TO_BIT;
-		}
-	}
-	// ∫Ò∆Æ ¥‹¿ß∑Œ ∫Ø»Ø
-	public double toBit(double measurement) {
-		return (measurement * factor);
-	}
-	// ∫Ò∆Æ ¥‹¿ßø°º≠ ø¯«œ¥¬ ¥‹¿ß∑Œ ∫Ø»Ø
-	public double fromBit(double measurement) {
-		return (measurement / factor);
-	}
-	
-	
+   private double factor;
+   
+   public LengthConverter(String unit) {
+      if(unit.equals("bit (ÎπÑÌä∏)")) {
+         factor = BIT_TO_BIT;
+      }
+      else if(unit.equals("byte (Î∞îÏù¥Ìä∏)")) {
+         factor = BYTE_TO_BIT;
+      }
+      else if(unit.equals("kb (ÌÇ¨Î°úÎ∞îÏù¥Ìä∏)")) {
+         factor = KBYTE_TO_BIT;
+      }
+      else if(unit.equals("mb (Î©îÍ∞ÄÎ∞îÏù¥Ìä∏)")) {
+         factor = MBYTE_TO_BIT;
+      }
+      else if(unit.equals("gb (Í∏∞Í∞ÄÎ∞îÏù¥Ìä∏)")) {
+         factor = GBYTE_TO_BIT;
+      }
+      else if(unit.equals("tb (ÌÖåÎùºÎ∞îÏù¥Ìä∏)")) {
+         factor = TBYTE_TO_BIT;
+      }
+      else if(unit.equals("pb (ÌéòÌÉÄÎ∞îÏù¥Ìä∏)")) {
+         factor = PBYTE_TO_BIT;
+      }
+      else if(unit.equals("eb (ÏóëÏÇ¨Î∞îÏù¥Ìä∏)")) {
+         factor = EBYTE_TO_BIT;
+      }
+   }
+   //   ∆Æ          »Ø
+   public double toBit(double measurement) {
+      return (measurement * factor);
+   }
+   //   ∆Æ             œ¥           »Ø
+   public double fromBit(double measurement) {
+      return (measurement / factor);
+   }
+   
+   
 }

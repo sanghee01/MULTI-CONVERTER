@@ -10,56 +10,70 @@ public class NumChange extends JFrame implements ActionListener{
    JTextField src=new JTextField(8);
    JTextField dest=new JTextField(8);
    JLabel col = new JLabel("\uC5D0\uC11C", Center);
-   String[] text= {"10Áø¼ö","2Áø¼ö","8Áø¼ö","16Áø¼ö"};
+   String[] text= {"DEC","BIN","OCT","HEX"};
    JComboBox combo1=new JComboBox(text);
    JComboBox combo2=new JComboBox(text);
    int n, sign=1;
    public JPanel panel = new JPanel();
    
    NumChange(){
-      panel.setBounds(0, 0, 483, 413);
+      panel.setBounds(0, 10, 542, 530);
       panel.setLayout(null);
-      src.setBounds(12, 10, 431, 106);
+      src.setForeground(Color.LIGHT_GRAY);
+      src.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 24));
+      src.setBounds(12, 72, 518, 164);
       panel.add(src);
-      combo1.setBounds(30, 164, 93, 57);
+      combo1.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 20));
+      combo1.setModel(new DefaultComboBoxModel(new String[] {"DEC", "BIN", "OCT", "HEX"}));
+      combo1.setBounds(49, 264, 99, 53);
       panel.add(combo1);
-      col.setBounds(147, 171, 70, 43);
+      col.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 20));
+      col.setBounds(147, 260, 73, 60);
       panel.add(col);
-      combo2.setBounds(229, 164, 93, 57);
+      combo2.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 20));
+      combo2.setModel(new DefaultComboBoxModel(new String[] {"DEC", "BIN", "OCT", "HEX"}));
+      combo2.setBounds(232, 264, 99, 53);
       panel.add(combo2);
       
       JLabel lblNewLabel = new JLabel("\uB85C \uBCC0\uD658\uD558\uAE30");
-      lblNewLabel.setBounds(358, 181, 93, 23);
+      lblNewLabel.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 20));
+      lblNewLabel.setBounds(343, 269, 163, 42);
       panel.add(lblNewLabel);
-      dest.setBounds(12, 274, 431, 129);
+      dest.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 24));
+      dest.setBounds(12, 351, 518, 164);
       panel.add(dest);
       
       dest.setEditable(false);
+      
+      JLabel lblNewLabel_1 = new JLabel("2ì§„ìˆ˜, 8ì§„ìˆ˜, 10ì§„ìˆ˜, 16ì§„ìˆ˜ë¥¼ ìƒí˜¸ ë³€í™˜í•©\r\në‹ˆë‹¤.");
+      lblNewLabel_1.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 20));
+      lblNewLabel_1.setBounds(22, 10, 486, 77);
+      panel.add(lblNewLabel_1);
       combo2.addActionListener(this);
       combo1.addActionListener(this);
       
  
       
    }
-   public void actionPerformed(ActionEvent e) {//¹öÆ°Å¬¸¯½Ã ¹ßµ¿µÇ´Â ¸Ş¼Òµå
+   public void actionPerformed(ActionEvent e) {//  Æ°Å¬      ßµ  Ç´   Ş¼Òµ 
       String s1=null, s2=null;
       if(e.getSource()==combo1) {
          s1=combo1.getSelectedItem().toString();
-         //getSelectedItem() :¼±ÅÃµÈ °´Ã¼ÀÇ ³»¿ë
-         //toString : °´Ã¼°¡ °¡Áö°íÀÖ´Â Á¤º¸³ª °ªµéÀ» ¹®ÀÚ¿­·Î ¸®ÅÏ
+         //getSelectedItem() :   Ãµ    Ã¼       
+         //toString :   Ã¼          Ö´                   Ú¿        
          try {
             switch(s1) {
-               case "10Áø¼ö":
+               case "DEC":
                   n=Integer.parseInt(src.getText());
-                  //ÀÔ·Â¹ŞÀº Á¤¼ö¸¦ getText()·Î ¹Ş¾Æ¼­ String ÇüÅÂ·Î ¹Ù²Ù¾î (src º¯¼ö¿¡ ³Ö´Â´Ù.)
+                  // Ô·Â¹           getText()    Ş¾Æ¼  String    Â·   Ù²Ù¾  (src         Ö´Â´ .)
                   break;
-               case "2Áø¼ö":
+               case "BIN":
                   n=Integer.parseInt(src.getText(),2);
                   break;
-               case "8Áø¼ö":
+               case "OCT":
                   n=Integer.parseInt(src.getText(),8);
                   break;
-               case "16Áø¼ö":
+               case "HEX":
                   n=Integer.parseInt(src.getText(),16);
                   break;
             }
@@ -76,19 +90,19 @@ public class NumChange extends JFrame implements ActionListener{
          s2=combo2.getSelectedItem().toString();
          try {
             switch(s2) {
-               case "10Áø¼ö":
+               case "DEC":
                   if(sign<0) dest.setText("-"+Integer.toString(n));
                   else dest.setText(Integer.toString(n));
                   break;
-               case "2Áø¼ö":
+               case "BIN":
                   if(sign<0) dest.setText("-"+Integer.toBinaryString(n));
                   else dest.setText(Integer.toBinaryString(n));
                   break;
-               case "8Áø¼ö":
+               case "OCT":
                   if(sign<0) dest.setText("-"+Integer.toOctalString(n));
                   else dest.setText(Integer.toOctalString(n));
                   break;
-               case "16Áø¼ö":
+               case "HEX":
                   if(sign<0) dest.setText("-"+Integer.toHexString(n));
                   else dest.setText(Integer.toHexString(n));
                   break;
@@ -98,5 +112,4 @@ public class NumChange extends JFrame implements ActionListener{
          }
       }
    }
-
 }
