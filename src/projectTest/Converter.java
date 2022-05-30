@@ -15,72 +15,107 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JLabel;
 
 public class Converter{
-	
-		public JPanel panel;
-		public JTextField toBitText;
-		public JTextField fromBitText; 
-		
-	/**
-	 * Create the frame.
-	 */
-	public Converter() {
-		
-		panel = new JPanel();
-		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
-		panel.setLayout(null);
-		
-		String[] unitChoose = {"bit","byte","kb","mb","gb","tb","pb","eb"};
-		
-		// ���� ����
-		JComboBox dropdown1 = new JComboBox(unitChoose);
-		dropdown1.setBounds(58, 58, 100, 30);
-		panel.add(dropdown1);
-		
-		JComboBox dropdown2 = new JComboBox(unitChoose);
-		dropdown2.setBounds(58, 107, 100, 30);
-		panel.add(dropdown2);
-		
-		// ���� ��ȯ�ϰ� ���� �� �Է�
-		toBitText = new JTextField("0");
-		toBitText.setBounds(170, 59, 216, 29);
-		panel.add(toBitText);
-		toBitText.setColumns(10);
-		
-		// ���� ��ȯ �� ���
-		fromBitText = new JTextField("0");
-		fromBitText.setEditable(false);
-		fromBitText.setBounds(170, 109, 216, 28);
-		panel.add(fromBitText);
-		
-		
-	
-		// ��ȯ ��ư
-		JButton convertBtn = new JButton("\uBCC0\uD658");
-		convertBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				// ���� ���� ������
-				String fromUnit = (String) dropdown1.getItemAt(dropdown1.getSelectedIndex());
-				// ��ȯ ���ϴ� ���� ������
-				String toUnit = (String) dropdown2.getItemAt(dropdown2.getSelectedIndex());
-				// factor ����
-				LengthConverter from = new LengthConverter(fromUnit);
-				LengthConverter to = new LengthConverter(toUnit);
-				
-				// �Է� �� double������ ������
-				double val = Double.parseDouble(toBitText.getText());
-				// �Է� ���� bit������
-				double bit = from.toBit(val);
-				// bit������ ��ȯ�� ���� ���ϴ� ������
-				String converted = Double.toString(to.fromBit(bit));
-				fromBitText.setText(converted);
-			}
-		});
+   
+      public JPanel panel;
+      public JTextField toBitText;
+      public JTextField fromBitText; 
+      
+   /**
+    * Create the frame.
+    */
+   public Converter() {
+      
+      panel = new JPanel();
+      panel.setBorder(new EmptyBorder(5, 5, 5, 5));
+      
+      String[] unitChoose = {"bit","byte","kb","mb","gb","tb","pb","eb"};
+      panel.setLayout(null);
+      
+      //          
+      JComboBox dropdown1 = new JComboBox(unitChoose);
+      dropdown1.setModel(new DefaultComboBoxModel(new String[] {"bit (비트)", "byte (바이트)", "kb (킬로바이트)", "mb (메가바이트)", "gb (기가바이트)", "tb (테라바이트)", "pb (페타바이트)", "eb (엑사바이트)"}));
+      dropdown1.setBounds(297, 58, 132, 30);
+      panel.add(dropdown1);
+      
+      JComboBox dropdown2 = new JComboBox(unitChoose);
+      dropdown2.setModel(new DefaultComboBoxModel(new String[] {"bit (비트)", "byte (바이트)", "kb (킬로바이트)", "mb (메가바이트)", "gb (기가바이트)", "tb (테라바이트)", "pb (페타바이트)", "eb (엑사바이트)"}));
+      dropdown2.setBounds(297, 107, 132, 30);
+      panel.add(dropdown2);
+      
+      //        ȯ ϰ           Է 
+      toBitText = new JTextField("0");
+      toBitText.setBounds(101, 59, 184, 29);
+      panel.add(toBitText);
+      toBitText.setColumns(10);
+      
+      //        ȯ       
+      fromBitText = new JTextField("0");
+      fromBitText.setBounds(101, 109, 184, 28);
+      fromBitText.setEditable(false);
+      panel.add(fromBitText);
+      
+      
+   
+      //   ȯ   ư
+      JButton convertBtn = new JButton("\uBCC0\uD658");
+      convertBtn.setBounds(101, 177, 328, 30);
+      convertBtn.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            
+            //                 
+            String fromUnit = (String) dropdown1.getItemAt(dropdown1.getSelectedIndex());
+            //   ȯ    ϴ             
+            String toUnit = (String) dropdown2.getItemAt(dropdown2.getSelectedIndex());
+            // factor     
+            LengthConverter from = new LengthConverter(fromUnit);
+            LengthConverter to = new LengthConverter(toUnit);
+            
+            //  Է     double             
+            double val = Double.parseDouble(toBitText.getText());
+            //  Է       bit      
+            double bit = from.toBit(val);
+            // bit         ȯ           ϴ        
+            String converted = Double.toString(to.fromBit(bit));
+            fromBitText.setText(converted);
+         }
+      });
+      panel.add(convertBtn);
+      
+      JLabel lblNewLabel = new JLabel("bit (비트) : 2진수에서 숫자 0, 1과 같이 신호를 나타내는 최소 단위");
+      lblNewLabel.setBounds(37, 251, 392, 15);
+      panel.add(lblNewLabel);
+      
+      JLabel lblNewLabel_1 = new JLabel("byte (바이트) : 8비트(bit)로 구성되는 정보 단위로 8비트가 1바이트다.");
+      lblNewLabel_1.setBounds(37, 276, 406, 15);
+      panel.add(lblNewLabel_1);
+      
+      JLabel lblNewLabel_2 = new JLabel("KB (킬로바이트) : 1,000바이트를 뜻하는 정보의 단위이다.");
+      lblNewLabel_2.setBounds(37, 301, 406, 15);
+      panel.add(lblNewLabel_2);
+      
+      JLabel lblNewLabel_3 = new JLabel("MB (메가바이트) : 1,000킬로바이트를 뜻하는 정보의 단위이다.");
+      lblNewLabel_3.setBounds(37, 326, 346, 15);
+      panel.add(lblNewLabel_3);
+      
+      JLabel lblNewLabel_4 = new JLabel("GB (기가바이트) : 1,000메가바이트를 뜻하는 정보의 단위이다.");
+      lblNewLabel_4.setBounds(37, 351, 406, 15);
+      panel.add(lblNewLabel_4);
+      
+      JLabel lblNewLabel_5 = new JLabel("TB (테라바이트) : 1,000기가바이트를 뜻하는 정보의 단위이다.");
+      lblNewLabel_5.setBounds(37, 376, 382, 15);
+      panel.add(lblNewLabel_5);
+      
+      JLabel lblNewLabel_6 = new JLabel("PB (페타바이트) : 1,000테라바이트를 뜻하는 정보의 단위이다.");
+      lblNewLabel_6.setBounds(37, 401, 346, 15);
+      panel.add(lblNewLabel_6);
+      
+      JLabel lblNewLabel_7 = new JLabel("EB (엑사바이트) : 1,000페타바이트를 뜻하는 정보의 단위이다.");
+      lblNewLabel_7.setBounds(37, 426, 346, 15);
+      panel.add(lblNewLabel_7);
 
-		convertBtn.setBounds(58, 179, 328, 30);
-		panel.add(convertBtn);
-
-	}
+   }
 }
