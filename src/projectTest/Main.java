@@ -58,6 +58,8 @@ public class Main extends JFrame {
       backPanel.setLayout(null);
       
       JTabbedPane tab = new JTabbedPane(JTabbedPane.TOP);
+      tab.setForeground(Color.BLACK);
+      tab.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
       tab.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
       tab.setBounds(0, 10, 542, 553);
       backPanel.add(tab);
@@ -68,9 +70,8 @@ public class Main extends JFrame {
       Calculator calculator = new Calculator();
       tab.addTab("계산", null, calculator.gui, null);
       
-      JPanel tab3 = new JPanel();
-      tab.addTab("진법계산", null, tab3, null);
-      tab3.setLayout(null);
+      Frame myCalc = new Frame();
+      tab.addTab("진법계산", null, myCalc.panel, null);
       
       BitShift bitshift = new BitShift();
       tab.addTab("비트연산", null, bitshift.panel, null);
@@ -83,10 +84,6 @@ public class Main extends JFrame {
       
       RgbCalc rgbcalc = new RgbCalc();
       tab.addTab("색상", null, rgbcalc.panel, null);
-
-      JPanel tab6 = new JPanel();
-      tab6.setBackground(Color.WHITE);
-      tab.addTab("info", null, tab6, null);
    
 
       

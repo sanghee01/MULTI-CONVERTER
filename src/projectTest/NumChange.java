@@ -17,20 +17,20 @@ public class NumChange extends JFrame implements ActionListener{
    public JPanel panel = new JPanel();
    
    NumChange(){
-      panel.setBounds(0, 10, 542, 530);
+      panel.setBounds(0, 10, 561, 563);
       panel.setLayout(null);
-      src.setForeground(Color.LIGHT_GRAY);
+      src.setForeground(Color.BLACK);
       src.setFont(new Font("맑은 고딕", Font.PLAIN, 24));
       src.setBounds(12, 72, 518, 164);
       panel.add(src);
-      combo1.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+      combo1.setFont(new Font("맑은 고딕", Font.PLAIN, 18));
       combo1.setModel(new DefaultComboBoxModel(new String[] {"DEC", "BIN", "OCT", "HEX"}));
       combo1.setBounds(49, 264, 99, 53);
       panel.add(combo1);
       col.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
       col.setBounds(147, 260, 73, 60);
       panel.add(col);
-      combo2.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+      combo2.setFont(new Font("맑은 고딕", Font.PLAIN, 18));
       combo2.setModel(new DefaultComboBoxModel(new String[] {"DEC", "BIN", "OCT", "HEX"}));
       combo2.setBounds(232, 264, 99, 53);
       panel.add(combo2);

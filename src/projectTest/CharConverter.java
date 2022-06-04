@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JPanel;
 import java.awt.Font;
+import java.awt.Color;
 
 
 class CharConverter implements ActionListener
@@ -38,7 +39,7 @@ class CharConverter implements ActionListener
           
           
           
-          panel.setBounds(0, 0, 522, 483);
+          panel.setBounds(0, 0, 556, 483);
           
                     panel.setLayout(null);
           
@@ -50,25 +51,28 @@ class CharConverter implements ActionListener
                     
                              
                      b1 = new JButton("\uBC88\uC5ED");
-                     b1.setBounds(223, 22, 75, 30);
+                     b1.setFont(new Font("맑은 고딕", Font.PLAIN, 18));
+                     b1.setForeground(Color.WHITE);
+                     b1.setBackground(Color.BLACK);
+                     b1.setBounds(433, 208, 90, 40);
                      panel.add(b1);
                      b1.setPreferredSize(d2);
                      L2 = new JLabel("2진수",SwingConstants.CENTER);
                      L2.setFont(new Font("맑은 고딕", Font.PLAIN, 18));
-                     L2.setBounds(10, 289, 64, 30);
+                     L2.setBounds(12, 289, 64, 30);
                      panel.add(L2);
                      L2.setPreferredSize(d1);
                      
                       tf1=new JTextField("",15);
                       tf1.setHorizontalAlignment(SwingConstants.LEFT);
-                      tf1.setBounds(12, 89, 498, 141);
+                      tf1.setBounds(15, 57, 508, 141);
                       panel.add(tf1);
                       tf2=new JTextField("",15);
-                      tf2.setBounds(86, 279, 424, 51);
+                      tf2.setBounds(86, 279, 435, 51);
                       panel.add(tf2);
                       
                       lblNewLabel = new JLabel("변환할 내용을 입력하세요.");
-                      lblNewLabel.setBounds(12, 64, 164, 15);
+                      lblNewLabel.setBounds(12, 32, 164, 15);
                       panel.add(lblNewLabel);
                       
                       lblNewLabel_1 = new JLabel("변환할 내용이 출력됩니다.");
@@ -76,12 +80,12 @@ class CharConverter implements ActionListener
                       panel.add(lblNewLabel_1);
                       
                       tf3 = new JTextField();
-                      tf3.setBounds(86, 340, 424, 51);
+                      tf3.setBounds(86, 340, 435, 51);
                       panel.add(tf3);
                       tf3.setColumns(10);
                       
                       tf4 = new JTextField();
-                      tf4.setBounds(86, 401, 424, 51);
+                      tf4.setBounds(86, 401, 435, 51);
                       panel.add(tf4);
                       tf4.setColumns(10);
                       

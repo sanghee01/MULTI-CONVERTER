@@ -17,6 +17,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JLabel;
+import java.awt.Color;
+import java.awt.Font;
 
 public class Converter{
    
@@ -62,7 +64,10 @@ public class Converter{
    
       // 변환 버튼
       JButton convertBtn = new JButton("\uBCC0\uD658");
-      convertBtn.setBounds(101, 177, 328, 30);
+      convertBtn.setFont(new Font("맑은 고딕", Font.PLAIN, 18));
+      convertBtn.setBackground(Color.BLACK);
+      convertBtn.setForeground(Color.WHITE);
+      convertBtn.setBounds(101, 168, 328, 40);
       convertBtn.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             
@@ -86,35 +91,35 @@ public class Converter{
       panel.add(convertBtn);
       
       JLabel lblNewLabel = new JLabel("bit (비트) : 2진수에서 숫자 0, 1과 같이 신호를 나타내는 최소 단위");
-      lblNewLabel.setBounds(37, 251, 392, 15);
+      lblNewLabel.setBounds(85, 253, 392, 15);
       panel.add(lblNewLabel);
       
       JLabel lblNewLabel_1 = new JLabel("byte (바이트) : 8비트(bit)로 구성되는 정보 단위로 8비트가 1바이트다.");
-      lblNewLabel_1.setBounds(37, 276, 406, 15);
+      lblNewLabel_1.setBounds(85, 278, 406, 15);
       panel.add(lblNewLabel_1);
       
       JLabel lblNewLabel_2 = new JLabel("KB (킬로바이트) : 1,000바이트를 뜻하는 정보의 단위이다.");
-      lblNewLabel_2.setBounds(37, 301, 406, 15);
+      lblNewLabel_2.setBounds(85, 303, 406, 15);
       panel.add(lblNewLabel_2);
       
       JLabel lblNewLabel_3 = new JLabel("MB (메가바이트) : 1,000킬로바이트를 뜻하는 정보의 단위이다.");
-      lblNewLabel_3.setBounds(37, 326, 346, 15);
+      lblNewLabel_3.setBounds(85, 328, 346, 15);
       panel.add(lblNewLabel_3);
       
       JLabel lblNewLabel_4 = new JLabel("GB (기가바이트) : 1,000메가바이트를 뜻하는 정보의 단위이다.");
-      lblNewLabel_4.setBounds(37, 351, 406, 15);
+      lblNewLabel_4.setBounds(85, 353, 406, 15);
       panel.add(lblNewLabel_4);
       
       JLabel lblNewLabel_5 = new JLabel("TB (테라바이트) : 1,000기가바이트를 뜻하는 정보의 단위이다.");
-      lblNewLabel_5.setBounds(37, 376, 382, 15);
+      lblNewLabel_5.setBounds(85, 378, 382, 15);
       panel.add(lblNewLabel_5);
       
       JLabel lblNewLabel_6 = new JLabel("PB (페타바이트) : 1,000테라바이트를 뜻하는 정보의 단위이다.");
-      lblNewLabel_6.setBounds(37, 401, 346, 15);
+      lblNewLabel_6.setBounds(85, 403, 346, 15);
       panel.add(lblNewLabel_6);
       
       JLabel lblNewLabel_7 = new JLabel("EB (엑사바이트) : 1,000페타바이트를 뜻하는 정보의 단위이다.");
-      lblNewLabel_7.setBounds(37, 426, 346, 15);
+      lblNewLabel_7.setBounds(85, 428, 346, 15);
       panel.add(lblNewLabel_7);
 
    }
