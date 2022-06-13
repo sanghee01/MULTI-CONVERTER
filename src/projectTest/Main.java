@@ -1,32 +1,16 @@
 package projectTest;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.CardLayout;
 import javax.swing.JTabbedPane;
 import java.awt.Color;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.FlowLayout;
-import javax.swing.JTextField;
-import javax.swing.JList;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import java.awt.Font;
 
 public class Main extends JFrame {
-
    private JPanel backPanel;
-   private JTextField textField;
-   /**
-    * @wbp.nonvisual location=568,-16
-    */
-
+  
    /**
     * Launch the application.
     */
@@ -74,7 +58,7 @@ public class Main extends JFrame {
       tab.addTab("진법계산", null, myCalc.panel, null);
       
       BitShift bitshift = new BitShift();
-      tab.addTab("비트연산", null, bitshift.panel, null);
+      tab.addTab("비트쉬프트", null, bitshift.panel, null);
    
       Converter converter = new Converter();
       tab.addTab("단위변환", null, converter.panel, null);
@@ -84,19 +68,5 @@ public class Main extends JFrame {
       
       RgbCalc rgbcalc = new RgbCalc();
       tab.addTab("색상", null, rgbcalc.panel, null);
-   
-
-      
-   
-   
-      
-//      textField = new JTextField();
-//      textField.setBounds(61, 194, 96, 82);
-//      tab5.add(textField);
-//      textField.setColumns(10);
-//      
-//      JList list = new JList();
-//      list.setBounds(61, 51, 96, 29);
-//      tab5.add(list);
    }
 }
